@@ -34,7 +34,7 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git zsh-autosuggestions)
+plugins=(git zsh-autosuggestions nvm-auto)
 
 DISABLE_AUTO_TITLE="true"
 
@@ -47,12 +47,11 @@ export JAVA_HOME=$JAVA_8_HOME
 
 export EXP_OSX_DOCKER=true
 
-export PATH=$PATH:$JAVA_HOME/bin:/usr/local/bin:/usr/bin:/usr/sbin:/usr/local/sbin:~/.rvm/bin:~/bin
+export PATH=$PATH:$JAVA_HOME/bin:/usr/local/bin:/usr/bin:/usr/sbin:/usr/local/sbin:~/bin
+
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
-{ eval `ssh-agent`; ssh-add -A; } &>/dev/null
-
-eval "$(direnv hook zsh)"
+#{ eval `ssh-agent`; ssh-add -A; } &>/dev/null
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
