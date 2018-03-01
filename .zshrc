@@ -71,3 +71,6 @@ code () {
         open -a "Visual Studio Code" --args "$F"
     fi
 }
+
+source <(npx --shell-auto-fallback zsh)
+nvm_auto_switch
