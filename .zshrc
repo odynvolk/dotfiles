@@ -61,6 +61,9 @@ export NVM_DIR="/Users/alexi/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 
+# Clean System Logs
+alias cleanlogs="sudo rm -f /private/var/logs/asl/*.asl && echo Cleaned Apple System Logs"
+
 code () {
     if [[ $# = 0 ]]
     then
@@ -73,3 +76,7 @@ code () {
 
 source <(npx --shell-auto-fallback zsh)
 nvm_auto_switch
+
+. /usr/local/etc/profile.d/z.sh
+
+source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
