@@ -64,6 +64,8 @@ export NVM_DIR="/Users/alexi/.nvm"
 # Clean System Logs
 alias cleanlogs="sudo rm -f /private/var/logs/asl/*.asl && echo Cleaned Apple System Logs"
 
+alias killallch="pgrep -f '\-\-headless' | xargs kill -9"
+
 code () {
     if [[ $# = 0 ]]
     then
