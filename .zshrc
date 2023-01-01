@@ -35,63 +35,30 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(zsh-z zsh-autosuggestions colored-man-pages)
+plugins=(zsh-z zsh-autosuggestions zsh-nvm-auto-switch colored-man-pages)
 
 DISABLE_AUTO_TITLE="true"
+
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
 # Customize to your needs...
-#export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home
-#export JAVA_HOME=$JAVA_8_HOME
-
-export EXP_OSX_DOCKER=true
-
 export PATH=$PATH:$JAVA_HOME/bin:/usr/local/bin:/usr/bin:/usr/sbin:/usr/local/sbin:~/bin
-#export PATH=$PATH:/opt/homebrew/bin/python3
+export PATH=$PATH:/opt/homebrew/bin/python3
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
+export HOMEBREW_GITHUB_API_TOKEN=
 
 alias dockerrmi="docker images -q | xargs -n 1 docker rmi -f"
 alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+alias curltime="curl -w \"@$HOME/.curl-format.txt\" -o /dev/null -s "
 
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-#[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-
-# place this after nvm initialization!
-autoload -U add-zsh-hook
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
-
-#alias nodeexperimental=export NODE_OPTIONS="--experimental-vm-modules --no-warnings"
-
-#CPPFLAGS=-I/usr/local/opt/openssl/include 
-#LDFLAGS=-L/usr/local/opt/openssl/lib
+if command -v pyenv 1>/dev/null 2>&1; then
+ eval "$(pyenv init -)"
+fi
 
 code () {
     if [[ $# = 0 ]]
@@ -103,8 +70,4 @@ code () {
     fi
 }
 
-#source <(npx zsh)
-
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
