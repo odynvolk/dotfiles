@@ -1,0 +1,69 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "telemetry": {
+    "metrics": false
+  },
+  "theme": "Uno Flat Dark",
+  "ui_font_size": 16,
+  "buffer_font_size": 12,
+  "format_on_save": "off",
+  "autosave": "on_focus_change",
+  "auto_update": false,
+  "soft_wrap": "editor_width",
+  "preferred_line_length": 120,
+  "tab_size": 2,
+  "inlay_hints": {
+    "enabled": true,
+    "show_type_hints": true,
+    "show_parameter_hints": true,
+    "show_other_hints": true
+  },
+  "ensure_final_newline_on_save": true,
+  "git": {
+    "inline_blame": {
+      "enabled": true,
+      "delay_ms": 600
+    }
+  },
+  "file_scan_exclusions": [
+    "**/.git",
+    "**/.svn",
+    "**/.hg",
+    "**/.idea/",
+    "**/.nyc_output/",
+    "**/.sf/",
+    "**/.sfdx/",
+    "**/.vscode/",
+    "**/.terraform/",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/Thumbs.db",
+    "**/.classpath",
+    "**/.settings",
+    "**/logs/",
+    "**/coverage/",
+    "**/node_modules/",
+    "**/build/"
+  ],
+  "formatter": {
+    "external": {
+      "command": "eslint",
+      "arguments": ["--fix", "--stdin", "--stdin-filename", "{file}"],
+      "rootPatterns": [
+        ".eslintrc",
+        ".eslintrc.js",
+        ".eslintrc.json",
+        ".eslintrc.yaml",
+        ".eslintrc.yml",
+        "package.json"
+      ]
+    }
+  }
+}
