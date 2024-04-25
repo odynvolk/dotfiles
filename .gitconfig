@@ -26,6 +26,7 @@
   st = status
   ci = commit
   br = branch
+  ap = add -p
   co = checkout
   df = diff
   ls = log --stat
@@ -53,7 +54,9 @@
 [merge]
   tool = diffmerge
 [push]
-  default = tracking
+  default = current
+[pull]
+  rebase = true
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
@@ -64,5 +67,13 @@
   oldHighlight = red bold 52
   newNormal = green bold
   newHighlight = green bold 22
+[status]
+  submoduleSummery = true
+[submodule]
+  recurse = true
 [rerere]
   enabled = true
+[url "https://github.com/"]
+  insteadOf = ssh://git@github.com/
+[gpg]
+  format = ssh
