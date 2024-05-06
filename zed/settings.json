@@ -65,5 +65,11 @@
         "package.json"
       ]
     }
+  },
+  "buffer_font_features": {
+    "calt": false
+  },
+  "ui_font_features": {
+    "calt": false
   }
 }
