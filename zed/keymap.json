@@ -70,25 +70,9 @@
     }
   },
   {
-    "context": "Workspace",
-    "bindings": {
-      "cmd-shift-o": "file_finder::Toggle",
-      "cmd-shift-a": "command_palette::Toggle",
-      "cmd-alt-o": "project_symbols::Toggle",
-      "cmd-1": "workspace::ToggleLeftDock",
-      "cmd-6": "diagnostics::Deploy"
-    }
-  },
-  {
     "context": "Pane",
     "bindings": {
-      "cmd-'": "pane::SplitRight"
-    }
-  },
-  {
-    "context": "ProjectPanel",
-    "bindings": {
-      "enter": "project_panel::Open"
+      "cmd-ä": "pane::SplitLeft"
     }
   }
 ]
