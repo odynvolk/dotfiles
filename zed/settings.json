@@ -10,7 +10,7 @@
   "telemetry": {
     "metrics": false
   },
-  "theme": "Uno Flat Dark",
+  "theme": "Gruvbox Light Soft",
   "ui_font_size": 16,
   "buffer_font_size": 12,
   "format_on_save": "off",
@@ -20,7 +20,7 @@
   "preferred_line_length": 120,
   "tab_size": 2,
   "inlay_hints": {
-    "enabled": true,
+    "enabled": false,
     "show_type_hints": true,
     "show_parameter_hints": true,
     "show_other_hints": true
@@ -52,24 +52,16 @@
     "**/node_modules/",
     "**/build/"
   ],
-  "formatter": {
-    "external": {
-      "command": "eslint",
-      "arguments": ["--fix", "--stdin", "--stdin-filename", "{file}"],
-      "rootPatterns": [
-        ".eslintrc",
-        ".eslintrc.js",
-        ".eslintrc.json",
-        ".eslintrc.yaml",
-        ".eslintrc.yml",
-        "package.json"
-      ]
+  "languages": {
+    "JavaScript": {
+      "code_actions_on_format": {
+          "source.fixAll.eslint": true
+      }
+    },
+    "TypeScript": {
+      "code_actions_on_format": {
+          "source.fixAll.eslint": true
+      }
     }
-  },
-  "buffer_font_features": {
-    "calt": false
-  },
-  "ui_font_features": {
-    "calt": false
   }
 }
