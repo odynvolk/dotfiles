@@ -1,0 +1,17 @@
+{
+  "log": {
+    "prefix": "log",
+    "body": ["console.log(`@@@ $1`);"],
+    "description": "Expand `log` to `console.log()`"
+  },
+  "sleep": {
+    "prefix": "sleep",
+    "body": ["await new Promise((resolve) => setTimeout(resolve, 1000));"],
+    "description": "Sleep via Promise"
+  },
+  "trace": {
+    "prefix": "trace",
+    "body": ["console.trace();"],
+    "description": "Sleep via Promise"
+  }
+}
