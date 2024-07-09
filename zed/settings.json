@@ -55,13 +55,21 @@
   "languages": {
     "JavaScript": {
       "code_actions_on_format": {
-          "source.fixAll.eslint": true
+        "source.fixAll.eslint": true
       }
     },
     "TypeScript": {
       "code_actions_on_format": {
-          "source.fixAll.eslint": true
+        "source.fixAll.eslint": true
       }
+    }
+  },
+  "assistant": {
+    "version": "1",
+    "provider": {
+      "name": "ollama",
+      // Recommended setting to allow for model startup
+      "low_speed_timeout_in_seconds": 20
     }
   }
 }
