@@ -10,9 +10,17 @@
   "telemetry": {
     "metrics": false
   },
-  "theme": "Gruvbox Light Soft",
-  "ui_font_size": 16,
+  "theme": "Uno Flat Dark",
+  "buffer_font_family": "Zed Mono",
   "buffer_font_size": 12,
+  "buffer_font_features": {
+    "calt": false
+  },
+  "ui_font_family": "Zed Mono",
+  "ui_font_size": 15,
+  "ui_font_features": {
+    "calt": false
+  },
   "format_on_save": "off",
   "autosave": "on_focus_change",
   "auto_update": false,
@@ -53,23 +61,18 @@
     "**/build/"
   ],
   "languages": {
+    "JSON": { "prettier": { "allowed": true, "parser": "json" } },
     "JavaScript": {
+      "formatter": "language_server",
       "code_actions_on_format": {
         "source.fixAll.eslint": true
       }
     },
     "TypeScript": {
+      "formatter": "language_server",
       "code_actions_on_format": {
         "source.fixAll.eslint": true
       }
-    }
-  },
-  "assistant": {
-    "version": "1",
-    "provider": {
-      "name": "ollama",
-      // Recommended setting to allow for model startup
-      "low_speed_timeout_in_seconds": 20
     }
   }
 }
