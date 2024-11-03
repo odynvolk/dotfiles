@@ -16,8 +16,6 @@
       "cmd-pagedown": "editor::MovePageDown",
       "cmd-pageup": "editor::MovePageUp",
       "ctrl-alt-shift-b": "editor::SelectToPreviousWordStart",
-      "cmd-alt-enter": "editor::NewlineAbove",
-      "shift-enter": "editor::NewlineBelow",
       "cmd--": "editor::Fold",
       "cmd-+": "editor::UnfoldLines",
       "alt-shift-g": "editor::SplitSelectionIntoLines",
@@ -63,10 +61,7 @@
   {
     "context": "Editor && mode == full",
     "bindings": {
-      "cmd-f12": "outline::Toggle",
-      "cmd-7": "outline::Toggle",
       "cmd-shift-o": "file_finder::Toggle",
-      "cmd-l": "go_to_line::Toggle"
     }
   },
   {
